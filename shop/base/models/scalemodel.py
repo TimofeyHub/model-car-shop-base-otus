@@ -1,18 +1,7 @@
 from django.db import models
 
-
-class Manufacturer(models.Model):
-    name = models.CharField(max_length=150)
-
-    def __str__(self):
-        return self.name
-
-
-class Scale(models.Model):
-    value = models.CharField(max_length=10)
-
-    def __str__(self):
-        return self.value
+from base.models import Manufacturer
+from base.models import Scale
 
 
 class ScaleModel(models.Model):
@@ -27,6 +16,8 @@ class ScaleModel(models.Model):
         on_delete=models.PROTECT
     )
     description = models.TextField(null=False, blank=True)
+
+    price = models.PositiveIntegerField(null=True)
 
     def __str__(self):
         return self.name
