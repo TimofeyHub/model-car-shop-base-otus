@@ -1,0 +1,16 @@
+{% extends 'root.html' %}
+
+{% block title %}
+    {{ page_title }}
+{% endblock %}
+
+{% block main %}
+    <h2>Models</h2>
+    <ul>
+        {% for scalemodel in scalemodel_list %}
+            <li>
+                <a href="{% url 'base:scalemodel-detail' scalemodel.pk %}">{{ scalemodel }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

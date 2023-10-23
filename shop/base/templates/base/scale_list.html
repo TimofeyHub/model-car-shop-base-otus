@@ -1,0 +1,16 @@
+{% extends 'root.html' %}
+
+{% block title %}
+    {{ page_title }}
+{% endblock %}
+
+{% block main %}
+    <h2>Scale list</h2>
+    <ul>
+        {% for scale in scale_list %}
+            <li>
+                {{ scale.value }}
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

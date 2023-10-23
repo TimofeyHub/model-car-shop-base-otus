@@ -1,0 +1,13 @@
+{% extends 'root.html' %}
+
+{% block title %}
+    {{ manufacturer.name }}
+{% endblock %}
+
+{% block main %}
+    <h2>{{ manufacturer.name }}</h2>
+    <p>{{ manufacturer.description }}</p>
+    <form action="{% url 'base:manufacturer-index' %}">
+        <input type="submit" value="Back"/>
+    </form>
+{% endblock %}

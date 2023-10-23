@@ -1,0 +1,16 @@
+{% extends 'root.html' %}
+
+{% block title %}
+    {{ scalemodel.name }}
+{% endblock %}
+
+{% block main %}
+    <h2>{{ scalemodel.name }}</h2>
+    <p>Описание: {{ scalemodel.description }}</p>
+    <p>Производитель: {{ scalemodel.manufacturer }}</p>
+    <p>Mасштаб: {{ scalemodel.scale }}</p>
+    <p>Цена: {{ scalemodel.price }}</p>
+    <form action="{% url 'base:scalemodel-index' %}">
+        <input type="submit" value="Back"/>
+    </form>
+{% endblock %}
