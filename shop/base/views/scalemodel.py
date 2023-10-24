@@ -1,3 +1,4 @@
+from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, DetailView
 
 from base.models import ScaleModel
@@ -15,3 +16,8 @@ class ScaleModelList(ListView):
         context['page_title'] = 'Models'
         return context
 
+
+class ScaleModelCreate(CreateView):
+    model = ScaleModel
+    fields = '__all__'
+    success_url = reverse_lazy('base:scale-index')
