@@ -13,4 +13,7 @@
             </li>
         {% endfor %}
     </ul>
+    <form action="{% url 'base:manufacturer-create' %}">
+        <input type="submit" value="Create"/>
+    </form>
 {% endblock %}
