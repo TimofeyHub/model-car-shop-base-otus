@@ -1,0 +1,10 @@
+{% extends 'root.html' %}
+
+{% block main %}
+    <div class="login-form">
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+        </form>
+    </div>
+{% endblock %}
