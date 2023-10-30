@@ -1,6 +1,7 @@
 from django.contrib import admin
 
-from base.models import Scale, Manufacturer, ScaleModel, User, Buy
+from base.models import Scale, Manufacturer, ScaleModel, Buy
+from myauth.models import MyUser
 
 
 @admin.register(Scale)
@@ -19,7 +20,7 @@ class ScaleModelAdmin(admin.ModelAdmin):
     list_display_links = "pk", "name"
 
 
-@admin.register(User)
+@admin.register(MyUser)
 class UserAdmin(admin.ModelAdmin):
     list_display = "pk", "username", "full_name", "email", "phone_number"
 
