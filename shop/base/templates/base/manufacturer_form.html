@@ -1,0 +1,17 @@
+{% extends 'root.html' %}
+
+{% block title %}
+    {{ page_title }}
+{% endblock %}
+
+{% block main %}
+    <h2>Manufacturer create</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+    <input type="submit" value="Сreate">
+    </form>
+    <form action="{% url 'base:manufacturer-index' %}">
+        <input type="submit" value="Back"/>
+    </form>
+{% endblock %}

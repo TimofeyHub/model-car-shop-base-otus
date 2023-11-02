@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>
+        {% block title %}
+            Scale models Shop
+        {% endblock %}
+    </title>
+
+
+    {% block css %}
+    {% endblock %}
+
+    {% block js %}
+    {% endblock %}
+</head>
+<body>
+<form action="/">
+        <input type="submit" value="Home"/>
+    </form>
+{% block main %}
+{% endblock %}
+
+<footer>
+    Otus, 2023
+</footer>
+</body>
+</html>

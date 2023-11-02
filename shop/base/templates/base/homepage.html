@@ -1,0 +1,16 @@
+{% extends 'root.html' %}
+
+{% block main %}
+    <h2>Список доступных ListView в рамках ДЗ</h2>
+    <ul>
+        <li>
+            <a href="{% url 'base:manufacturer-index' %}">Список производителей</a>
+        </li>
+        <li>
+            <a href="{% url 'base:scale-index' %}">Доступные масштабы </a>
+        </li>
+        <li>
+            <a href="{% url 'base:scalemodel-index' %}">Доступные модели </a>
+        </li>
+    </ul>
+{% endblock %}
