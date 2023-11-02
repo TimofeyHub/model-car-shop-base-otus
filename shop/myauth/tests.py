@@ -3,8 +3,6 @@ from django.test import TestCase
 from django.urls import reverse
 from django.core.exceptions import ObjectDoesNotExist
 
-from django.utils.translation import gettext_lazy as _
-
 
 class MyUserRegisterTest(TestCase):
 
@@ -51,19 +49,15 @@ class MyUserRegisterTest(TestCase):
         self.assertEqual(expected_username, created_user.username)
 
     def test_failed_register(self):
-
         response = self.client.post(
             reverse('myauth:register'),
             data=self.user_broken_data
         )
         self.assertEqual(200, response.status_code)
 
-        test_username = self.user_broken_data['username']
+        created_user_count = get_user_model().objects.count()
 
-        try:
-            get_user_model().objects.get(username=test_username)
-        except ObjectDoesNotExist:
-            pass
+        self.assertEqual(created_user_count, 0)
 
     def test_create_users_with_same_email(self):
         response_1 = self.client.post(
