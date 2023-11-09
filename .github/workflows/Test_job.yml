@@ -29,9 +29,8 @@ jobs:
         run: |
           cd shop
           python manage.py test
-      - name: Generate Report
+      - name: Test coverage report
         run: |
           pip install coverage
-          coverage run -m unittest
-      - name: Upload Coverage to Codecov
-        uses: codecov/codecov-action@v2
+          coverage run manage.py test
+          coverage report
